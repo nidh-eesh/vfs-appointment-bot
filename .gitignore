@@ -32,3 +32,4 @@ app.log
 # Local Config
 config.ini
 *.ini
+.vercel

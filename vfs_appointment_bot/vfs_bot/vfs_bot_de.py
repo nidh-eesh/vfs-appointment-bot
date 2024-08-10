@@ -77,8 +77,9 @@ class VfsBotDe(VfsBot):
         """
         policies_reject_button = page.get_by_role("button", name="Reject All")
         if policies_reject_button is not None:
+            print(policies_reject_button)
             policies_reject_button.click()
-            logging.debug("Rejected all cookie policies")
+            logging.info("Rejected all cookie policies")
 
     def check_for_appontment(
         self, page: Page, appointment_params: Dict[str, str]

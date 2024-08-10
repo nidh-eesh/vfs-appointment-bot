@@ -81,8 +81,11 @@ def main() -> None:
     )
 
     args = parser.parse_args()
+    print("\n", args, "\n")
     source_country_code = args.source_country_code
     destination_country_code = args.destination_country_code
+    print("Source Country Code:", source_country_code)
+    print("Destination Country Code:", destination_country_code)
     try:
         while True:
             vfs_bot = get_vfs_bot(source_country_code, destination_country_code)

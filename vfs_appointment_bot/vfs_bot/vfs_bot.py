@@ -66,16 +66,17 @@ class VfsBot(ABC):
 
         email_id = get_config_value("vfs-credential", "email")
         password = get_config_value("vfs-credential", "password")
+        print(browser_type, headless_mode, url_key, vfs_url, email_id, password)
 
         appointment_params = self.get_appointment_params(args)
-
+        print(appointment_params)
         # Launch browser and perform actions
         with sync_playwright() as p:
             browser = getattr(p, browser_type).launch(
                 headless=headless_mode in ("True", "true")
             )
             page = browser.new_page()
-            stealth_sync(page)
+            # stealth_sync(page)
 
             page.goto(vfs_url)
             self.pre_login_steps(page)
